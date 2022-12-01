@@ -1,3 +1,4 @@
+-- test
 - hosts: all 
   tasks: 
 - name: Save the result of 'whoami' in 'whoami_out'
