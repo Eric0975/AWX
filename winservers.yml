@@ -8,3 +8,8 @@
   win_updates:
     category_names: '*'
     reboot: yes
+    
+  - name: Check SQL Server is Installed
+    win_service:
+     name: MSSQLSERVER
+    register: sqlstatus
