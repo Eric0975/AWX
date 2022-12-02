@@ -1,6 +1,6 @@
 ---
 - name: Install Telnet and check SQL
-  hosts: all
+  hosts: se1win.redelf.ch
     
   tasks:
   
