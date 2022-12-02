@@ -4,13 +4,7 @@
     
   tasks:
   
-  - name: Check SQL Server is Installed
-    win_service:
-     name: MSSQLSERVER
-    register: sqlstatus
-  - name: Start SQL Service
-    win_service:
-     name: MSSQLSERVER
-     start_mode: auto
-     state: started
-    when: sqlstatus.exists
+- name: Install all updates and reboot as many times as needed
+  ansible.windows.win_updates:
+    category_names: '*'
+    reboot: yes
