@@ -9,6 +9,7 @@
       - CriticalUpdates
       - SecurityUpdates
       - UpdateRollups
+      - DefinitionUpdates
       log_path: C:\ansible-windows-update.txt
       state: installed
       reboot: yes
