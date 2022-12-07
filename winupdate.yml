@@ -4,7 +4,7 @@
   gather_facts: no
   tasks:
   - name: Return a failure back to Ansible
-    win_powershell:
+    ansible.windows.win_powershell:
       script: |
         if (Test-Path C:\bad.file) {
             $Ansible.Failed = $true
