@@ -4,11 +4,11 @@
   gather_facts: no
   tasks:
   - name: Return a failure back to Ansible
-  ansible.windows.win_powershell:
-    script: |
-      if (Test-Path C:\bad.file) {
-          $Ansible.Failed = $true
-      }
+    win_powershell:
+      script: |
+        if (Test-Path C:\bad.file) {
+            $Ansible.Failed = $true
+        }
   - name: Install all security, critical and rollup updates without a scheduled task
     win_updates:
       category_names:
