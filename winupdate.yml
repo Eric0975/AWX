@@ -9,9 +9,8 @@
         if (Test-Path C:\bad.file) {
             $Ansible.Failed = $true
         }
-      register: win_ps_out   
-      ignore_errors: true       
-
+       error: win_ps_out   
+    
   - name: Conditional task for positive rc
     debug:
       msg: "PowerShell rc: {{ win_ps_out.rc }}"
@@ -21,7 +20,7 @@
     debug:
       msg: "PowerShell rc: {{ win_ps_out.rc - 4294967296 }}"
     when: win_ps_out.rc > 2147483647
-    
+
   - name: Install all security, critical and rollup updates without a scheduled task
     win_updates:
       category_names:
